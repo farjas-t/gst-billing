@@ -19,7 +19,7 @@ jobs:
           sed -i "s/DB_USERNAME=root/DB_USERNAME=${{ secrets.DB_USERNAME }}/" .env
           sed -i "s/DB_PASSWORD=/DB_PASSWORD=${{ secrets.DB_PASSWORD }}/" .env
       - name: Install Dependencies
-        run: composer install
+        run: composer update
       - name: Generate key
         run: php artisan key:generate
       - name: Generate storage link
