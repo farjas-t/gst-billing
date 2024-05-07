@@ -18,8 +18,10 @@ jobs:
           sed -i "s/DB_DATABASE=laravel/DB_DATABASE=${{ secrets.DB_DATABASE }}/" .env
           sed -i "s/DB_USERNAME=root/DB_USERNAME=${{ secrets.DB_USERNAME }}/" .env
           sed -i "s/DB_PASSWORD=/DB_PASSWORD=${{ secrets.DB_PASSWORD }}/" .env
+      - name: Composer self-update
+        run: composer self-update
       - name: Install Dependencies
-        run: composer update --ignore-platform-reqs
+        run: composer install
       - name: Generate key
         run: php artisan key:generate
       - name: Generate storage link
