@@ -1,0 +1,5 @@
+RewriteEngine On
+
+# Remove public/ from URL
+RewriteCond %{REQUEST_URI} !^/gst-billing/public/
+RewriteRule ^(.*)$ /gst-billing/public/$1 [L]
