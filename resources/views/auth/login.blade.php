@@ -45,9 +45,12 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="form-group mb-0 text-center">
+                            <div class="form-group mb-3 text-center">
                                 <button class="btn btn-primary btn-block font-weight-bold" type="submit">Log In
                                 </button>
+                            </div>
+                            <div class="text-center">
+                                <p>Not a member? <a href="{{ route('register') }}">Register</a></p>
                             </div>
                         </form>
                     </div> <!-- end card-body -->
